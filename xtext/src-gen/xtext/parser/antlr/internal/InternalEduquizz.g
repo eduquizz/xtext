@@ -80,71 +80,36 @@ ruleQuestionnaire returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getQuestionnaireAccess().getQuestionnaireKeyword_0());
 		}
-		otherlv_1='{'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getQuestionnaireAccess().getLeftCurlyBracketKeyword_1());
-		}
 		(
-			otherlv_2='nom'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getQuestionnaireAccess().getNomKeyword_2_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getQuestionnaireAccess().getNomEStringParserRuleCall_2_1_0());
+				{
+					newCompositeNode(grammarAccess.getQuestionnaireAccess().getNomEStringParserRuleCall_1_0());
+				}
+				lv_nom_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getQuestionnaireRule());
 					}
-					lv_nom_3_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getQuestionnaireRule());
-						}
-						set(
-							$current,
-							"nom",
-							lv_nom_3_0,
-							"xtext.Eduquizz.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"nom",
+						lv_nom_1_0,
+						"xtext.Eduquizz.EString");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)?
 		(
-			otherlv_4='resultat'
+			otherlv_2='RetourAutoris\u00E9'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getQuestionnaireAccess().getResultatKeyword_3_0());
+				newLeafNode(otherlv_2, grammarAccess.getQuestionnaireAccess().getRetourAutorisKeyword_2_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuestionnaireAccess().getResultatEDoubleParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getQuestionnaireAccess().getRetourAutoriseEBooleanParserRuleCall_2_1_0());
 					}
-					lv_resultat_5_0=ruleEDouble
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getQuestionnaireRule());
-						}
-						set(
-							$current,
-							"resultat",
-							lv_resultat_5_0,
-							"xtext.Eduquizz.EDouble");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_6='retourAutorise'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getQuestionnaireAccess().getRetourAutoriseKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getQuestionnaireAccess().getRetourAutoriseEBooleanParserRuleCall_4_1_0());
-					}
-					lv_retourAutorise_7_0=ruleEBoolean
+					lv_retourAutorise_3_0=ruleEBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuestionnaireRule());
@@ -152,7 +117,7 @@ ruleQuestionnaire returns [EObject current=null]
 						set(
 							$current,
 							"retourAutorise",
-							lv_retourAutorise_7_0,
+							lv_retourAutorise_3_0,
 							"xtext.Eduquizz.EBoolean");
 						afterParserOrEnumRuleCall();
 					}
@@ -160,16 +125,16 @@ ruleQuestionnaire returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_8='melange'
+			otherlv_4='M\u00E9langer'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getQuestionnaireAccess().getMelangeKeyword_5_0());
+				newLeafNode(otherlv_4, grammarAccess.getQuestionnaireAccess().getMLangerKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuestionnaireAccess().getMelangeEBooleanParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getQuestionnaireAccess().getMelangeEBooleanParserRuleCall_3_1_0());
 					}
-					lv_melange_9_0=ruleEBoolean
+					lv_melange_5_0=ruleEBoolean
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuestionnaireRule());
@@ -177,27 +142,19 @@ ruleQuestionnaire returns [EObject current=null]
 						set(
 							$current,
 							"melange",
-							lv_melange_9_0,
+							lv_melange_5_0,
 							"xtext.Eduquizz.EBoolean");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_10='question'
-		{
-			newLeafNode(otherlv_10, grammarAccess.getQuestionnaireAccess().getQuestionKeyword_6());
-		}
-		otherlv_11='{'
-		{
-			newLeafNode(otherlv_11, grammarAccess.getQuestionnaireAccess().getLeftCurlyBracketKeyword_7());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getQuestionnaireAccess().getQuestionQuestionParserRuleCall_8_0());
+					newCompositeNode(grammarAccess.getQuestionnaireAccess().getQuestionQuestionParserRuleCall_4_0());
 				}
-				lv_question_12_0=ruleQuestion
+				lv_question_6_0=ruleQuestion
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getQuestionnaireRule());
@@ -205,45 +162,12 @@ ruleQuestionnaire returns [EObject current=null]
 					add(
 						$current,
 						"question",
-						lv_question_12_0,
+						lv_question_6_0,
 						"xtext.Eduquizz.Question");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
-		(
-			otherlv_13=','
-			{
-				newLeafNode(otherlv_13, grammarAccess.getQuestionnaireAccess().getCommaKeyword_9_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getQuestionnaireAccess().getQuestionQuestionParserRuleCall_9_1_0());
-					}
-					lv_question_14_0=ruleQuestion
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getQuestionnaireRule());
-						}
-						add(
-							$current,
-							"question",
-							lv_question_14_0,
-							"xtext.Eduquizz.Question");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		otherlv_15='}'
-		{
-			newLeafNode(otherlv_15, grammarAccess.getQuestionnaireAccess().getRightCurlyBracketKeyword_10());
-		}
-		otherlv_16='}'
-		{
-			newLeafNode(otherlv_16, grammarAccess.getQuestionnaireAccess().getRightCurlyBracketKeyword_11());
-		}
+		)+
 	)
 ;
 
@@ -278,82 +202,6 @@ ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 		{
 			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
 		}
-	)
-;
-
-// Entry rule entryRuleEDouble
-entryRuleEDouble returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getEDoubleRule()); }
-	iv_ruleEDouble=ruleEDouble
-	{ $current=$iv_ruleEDouble.current.getText(); }
-	EOF;
-
-// Rule EDouble
-ruleEDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			kw='-'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getEDoubleAccess().getHyphenMinusKeyword_0());
-			}
-		)?
-		(
-			this_INT_1=RULE_INT
-			{
-				$current.merge(this_INT_1);
-			}
-			{
-				newLeafNode(this_INT_1, grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_1());
-			}
-		)?
-		kw='.'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEDoubleAccess().getFullStopKeyword_2());
-		}
-		this_INT_3=RULE_INT
-		{
-			$current.merge(this_INT_3);
-		}
-		{
-			newLeafNode(this_INT_3, grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_3());
-		}
-		(
-			(
-				kw='E'
-				{
-					$current.merge(kw);
-					newLeafNode(kw, grammarAccess.getEDoubleAccess().getEKeyword_4_0_0());
-				}
-				    |
-				kw='e'
-				{
-					$current.merge(kw);
-					newLeafNode(kw, grammarAccess.getEDoubleAccess().getEKeyword_4_0_1());
-				}
-			)
-			(
-				kw='-'
-				{
-					$current.merge(kw);
-					newLeafNode(kw, grammarAccess.getEDoubleAccess().getHyphenMinusKeyword_4_1());
-				}
-			)?
-			this_INT_7=RULE_INT
-			{
-				$current.merge(this_INT_7);
-			}
-			{
-				newLeafNode(this_INT_7, grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_4_2());
-			}
-		)?
 	)
 ;
 
@@ -403,64 +251,54 @@ ruleQuestion returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='Question'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getQuestionAccess().getQuestionKeyword_0());
+		}
 		(
 			(
-				lv_reponsesMultiples_0_0='reponsesMultiples'
 				{
-					newLeafNode(lv_reponsesMultiples_0_0, grammarAccess.getQuestionAccess().getReponsesMultiplesReponsesMultiplesKeyword_0_0());
+					newCompositeNode(grammarAccess.getQuestionAccess().getEnnonceEStringParserRuleCall_1_0());
+				}
+				lv_ennonce_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getQuestionRule());
+					}
+					set(
+						$current,
+						"ennonce",
+						lv_ennonce_1_0,
+						"xtext.Eduquizz.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				lv_reponsesMultiples_2_0='R\u00E9ponsesMultiples'
+				{
+					newLeafNode(lv_reponsesMultiples_2_0, grammarAccess.getQuestionAccess().getReponsesMultiplesRPonsesMultiplesKeyword_2_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getQuestionRule());
 					}
-					setWithLastConsumed($current, "reponsesMultiples", lv_reponsesMultiples_0_0 != null, "reponsesMultiples");
+					setWithLastConsumed($current, "reponsesMultiples", lv_reponsesMultiples_2_0 != null, "R\u00E9ponsesMultiples");
 				}
 			)
 		)?
-		otherlv_1='Question'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getQuestionAccess().getQuestionKeyword_1());
-		}
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getQuestionAccess().getLeftCurlyBracketKeyword_2());
-		}
 		(
-			otherlv_3='ennonce'
+			otherlv_3='Difficult\u00E9'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getQuestionAccess().getEnnonceKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getQuestionAccess().getDifficultKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuestionAccess().getEnnonceEStringParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getQuestionAccess().getDifficulteEIntParserRuleCall_3_1_0());
 					}
-					lv_ennonce_4_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getQuestionRule());
-						}
-						set(
-							$current,
-							"ennonce",
-							lv_ennonce_4_0,
-							"xtext.Eduquizz.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_5='difficulte'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getQuestionAccess().getDifficulteKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getQuestionAccess().getDifficulteEIntParserRuleCall_4_1_0());
-					}
-					lv_difficulte_6_0=ruleEInt
+					lv_difficulte_4_0=ruleEInt
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuestionRule());
@@ -468,7 +306,7 @@ ruleQuestion returns [EObject current=null]
 						set(
 							$current,
 							"difficulte",
-							lv_difficulte_6_0,
+							lv_difficulte_4_0,
 							"xtext.Eduquizz.EInt");
 						afterParserOrEnumRuleCall();
 					}
@@ -476,20 +314,16 @@ ruleQuestion returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_7='etiquette'
+			otherlv_5='Etiquettes'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getQuestionAccess().getEtiquetteKeyword_5_0());
-			}
-			otherlv_8='('
-			{
-				newLeafNode(otherlv_8, grammarAccess.getQuestionAccess().getLeftParenthesisKeyword_5_1());
+				newLeafNode(otherlv_5, grammarAccess.getQuestionAccess().getEtiquettesKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuestionAccess().getEtiquetteEtiquetteParserRuleCall_5_2_0());
+						newCompositeNode(grammarAccess.getQuestionAccess().getEtiquetteEtiquetteParserRuleCall_4_1_0());
 					}
-					lv_etiquette_9_0=ruleEtiquette
+					lv_etiquette_6_0=ruleEtiquette
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuestionRule());
@@ -497,23 +331,23 @@ ruleQuestion returns [EObject current=null]
 						add(
 							$current,
 							"etiquette",
-							lv_etiquette_9_0,
+							lv_etiquette_6_0,
 							"xtext.Eduquizz.Etiquette");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_10=','
+				otherlv_7=','
 				{
-					newLeafNode(otherlv_10, grammarAccess.getQuestionAccess().getCommaKeyword_5_3_0());
+					newLeafNode(otherlv_7, grammarAccess.getQuestionAccess().getCommaKeyword_4_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getQuestionAccess().getEtiquetteEtiquetteParserRuleCall_5_3_1_0());
+							newCompositeNode(grammarAccess.getQuestionAccess().getEtiquetteEtiquetteParserRuleCall_4_2_1_0());
 						}
-						lv_etiquette_11_0=ruleEtiquette
+						lv_etiquette_8_0=ruleEtiquette
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getQuestionRule());
@@ -521,32 +355,20 @@ ruleQuestion returns [EObject current=null]
 							add(
 								$current,
 								"etiquette",
-								lv_etiquette_11_0,
+								lv_etiquette_8_0,
 								"xtext.Eduquizz.Etiquette");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_12=')'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getQuestionAccess().getRightParenthesisKeyword_5_4());
-			}
 		)?
-		otherlv_13='reponse'
-		{
-			newLeafNode(otherlv_13, grammarAccess.getQuestionAccess().getReponseKeyword_6());
-		}
-		otherlv_14='{'
-		{
-			newLeafNode(otherlv_14, grammarAccess.getQuestionAccess().getLeftCurlyBracketKeyword_7());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getQuestionAccess().getReponseReponseParserRuleCall_8_0());
+					newCompositeNode(grammarAccess.getQuestionAccess().getReponseReponseParserRuleCall_5_0());
 				}
-				lv_reponse_15_0=ruleReponse
+				lv_reponse_9_0=ruleReponse
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getQuestionRule());
@@ -554,45 +376,12 @@ ruleQuestion returns [EObject current=null]
 					add(
 						$current,
 						"reponse",
-						lv_reponse_15_0,
+						lv_reponse_9_0,
 						"xtext.Eduquizz.Reponse");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
-		(
-			otherlv_16=','
-			{
-				newLeafNode(otherlv_16, grammarAccess.getQuestionAccess().getCommaKeyword_9_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getQuestionAccess().getReponseReponseParserRuleCall_9_1_0());
-					}
-					lv_reponse_17_0=ruleReponse
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getQuestionRule());
-						}
-						add(
-							$current,
-							"reponse",
-							lv_reponse_17_0,
-							"xtext.Eduquizz.Reponse");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		otherlv_18='}'
-		{
-			newLeafNode(otherlv_18, grammarAccess.getQuestionAccess().getRightCurlyBracketKeyword_10());
-		}
-		otherlv_19='}'
-		{
-			newLeafNode(otherlv_19, grammarAccess.getQuestionAccess().getRightCurlyBracketKeyword_11());
-		}
+		)+
 	)
 ;
 
@@ -652,43 +441,25 @@ ruleEtiquette returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='Etiquette'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getEtiquetteAccess().getEtiquetteKeyword_1());
-		}
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getEtiquetteAccess().getLeftCurlyBracketKeyword_2());
-		}
 		(
-			otherlv_3='nom'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getEtiquetteAccess().getNomKeyword_3_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getEtiquetteAccess().getNomEStringParserRuleCall_3_1_0());
+				{
+					newCompositeNode(grammarAccess.getEtiquetteAccess().getNomEStringParserRuleCall_1_0());
+				}
+				lv_nom_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEtiquetteRule());
 					}
-					lv_nom_4_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getEtiquetteRule());
-						}
-						set(
-							$current,
-							"nom",
-							lv_nom_4_0,
-							"xtext.Eduquizz.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"nom",
+						lv_nom_1_0,
+						"xtext.Eduquizz.EString");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)?
-		otherlv_5='}'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getEtiquetteAccess().getRightCurlyBracketKeyword_4());
-		}
 	)
 ;
 
@@ -715,57 +486,47 @@ ruleReponse returns [EObject current=null]
 					$current);
 			}
 		)
+		otherlv_1='['
+		{
+			newLeafNode(otherlv_1, grammarAccess.getReponseAccess().getLeftSquareBracketKeyword_1());
+		}
 		(
 			(
-				lv_estVraie_1_0='estVraie'
+				lv_estVraie_2_0='x'
 				{
-					newLeafNode(lv_estVraie_1_0, grammarAccess.getReponseAccess().getEstVraieEstVraieKeyword_1_0());
+					newLeafNode(lv_estVraie_2_0, grammarAccess.getReponseAccess().getEstVraieXKeyword_2_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getReponseRule());
 					}
-					setWithLastConsumed($current, "estVraie", lv_estVraie_1_0 != null, "estVraie");
+					setWithLastConsumed($current, "estVraie", lv_estVraie_2_0 != null, "x");
 				}
 			)
 		)?
-		otherlv_2='Reponse'
+		otherlv_3=']'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getReponseAccess().getReponseKeyword_2());
-		}
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getReponseAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getReponseAccess().getRightSquareBracketKeyword_3());
 		}
 		(
-			otherlv_4='texte'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getReponseAccess().getTexteKeyword_4_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getReponseAccess().getTexteEStringParserRuleCall_4_1_0());
+				{
+					newCompositeNode(grammarAccess.getReponseAccess().getTexteEStringParserRuleCall_4_0());
+				}
+				lv_texte_4_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getReponseRule());
 					}
-					lv_texte_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getReponseRule());
-						}
-						set(
-							$current,
-							"texte",
-							lv_texte_5_0,
-							"xtext.Eduquizz.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"texte",
+						lv_texte_4_0,
+						"xtext.Eduquizz.EString");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)?
-		otherlv_6='}'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getReponseAccess().getRightCurlyBracketKeyword_5());
-		}
 	)
 ;
 

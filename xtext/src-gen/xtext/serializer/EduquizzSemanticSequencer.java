@@ -70,14 +70,7 @@ public class EduquizzSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Question returns Question
 	 *
 	 * Constraint:
-	 *     (
-	 *         reponsesMultiples?='reponsesMultiples'? 
-	 *         ennonce=EString? 
-	 *         difficulte=EInt? 
-	 *         (etiquette+=Etiquette etiquette+=Etiquette*)? 
-	 *         reponse+=Reponse 
-	 *         reponse+=Reponse*
-	 *     )
+	 *     (ennonce=EString? reponsesMultiples?='RéponsesMultiples'? difficulte=EInt? (etiquette+=Etiquette etiquette+=Etiquette*)? reponse+=Reponse+)
 	 * </pre>
 	 */
 	protected void sequence_Question(ISerializationContext context, Question semanticObject) {
@@ -91,14 +84,7 @@ public class EduquizzSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Questionnaire returns Questionnaire
 	 *
 	 * Constraint:
-	 *     (
-	 *         nom=EString? 
-	 *         resultat=EDouble? 
-	 *         retourAutorise=EBoolean? 
-	 *         melange=EBoolean? 
-	 *         question+=Question 
-	 *         question+=Question*
-	 *     )
+	 *     (nom=EString? retourAutorise=EBoolean? melange=EBoolean? question+=Question+)
 	 * </pre>
 	 */
 	protected void sequence_Questionnaire(ISerializationContext context, Questionnaire semanticObject) {
@@ -112,7 +98,7 @@ public class EduquizzSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Reponse returns Reponse
 	 *
 	 * Constraint:
-	 *     (estVraie?='estVraie'? texte=EString?)
+	 *     (estVraie?='x'? texte=EString?)
 	 * </pre>
 	 */
 	protected void sequence_Reponse(ISerializationContext context, Reponse semanticObject) {

@@ -27,138 +27,70 @@ public class EduquizzGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.Eduquizz.Questionnaire");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cQuestionnaireKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNomAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNomEStringParserRuleCall_1_0 = (RuleCall)cNomAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cNomKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cNomAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cNomEStringParserRuleCall_2_1_0 = (RuleCall)cNomAssignment_2_1.eContents().get(0);
+		private final Keyword cRetourAutorisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cRetourAutoriseAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cRetourAutoriseEBooleanParserRuleCall_2_1_0 = (RuleCall)cRetourAutoriseAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cResultatKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cResultatAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cResultatEDoubleParserRuleCall_3_1_0 = (RuleCall)cResultatAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cRetourAutoriseKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cRetourAutoriseAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cRetourAutoriseEBooleanParserRuleCall_4_1_0 = (RuleCall)cRetourAutoriseAssignment_4_1.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cMelangeKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cMelangeAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cMelangeEBooleanParserRuleCall_5_1_0 = (RuleCall)cMelangeAssignment_5_1.eContents().get(0);
-		private final Keyword cQuestionKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cQuestionAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cQuestionQuestionParserRuleCall_8_0 = (RuleCall)cQuestionAssignment_8.eContents().get(0);
-		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cCommaKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Assignment cQuestionAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
-		private final RuleCall cQuestionQuestionParserRuleCall_9_1_0 = (RuleCall)cQuestionAssignment_9_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cMLangerKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cMelangeAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cMelangeEBooleanParserRuleCall_3_1_0 = (RuleCall)cMelangeAssignment_3_1.eContents().get(0);
+		private final Assignment cQuestionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cQuestionQuestionParserRuleCall_4_0 = (RuleCall)cQuestionAssignment_4.eContents().get(0);
 		
 		//Questionnaire returns Questionnaire:
-		//    'Questionnaire'
-		//    '{'
-		//        ('nom' nom=EString)?
-		//        ('resultat' resultat=EDouble)?
-		//        ('retourAutorise' retourAutorise=EBoolean)?
-		//        ('melange' melange=EBoolean)?
-		//        'question' '{' question+=Question ( "," question+=Question)* '}'
-		//    '}';
+		//    'Questionnaire' (nom=EString)?
+		//    ('RetourAutorisé' retourAutorise=EBoolean)?
+		//    ('Mélanger' melange=EBoolean)?
+		//    (question+=Question)+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Questionnaire'
-		//'{'
-		//    ('nom' nom=EString)?
-		//    ('resultat' resultat=EDouble)?
-		//    ('retourAutorise' retourAutorise=EBoolean)?
-		//    ('melange' melange=EBoolean)?
-		//    'question' '{' question+=Question ( "," question+=Question)* '}'
-		//'}'
+		//'Questionnaire' (nom=EString)?
+		//('RetourAutorisé' retourAutorise=EBoolean)?
+		//('Mélanger' melange=EBoolean)?
+		//(question+=Question)+
 		public Group getGroup() { return cGroup; }
 		
 		//'Questionnaire'
 		public Keyword getQuestionnaireKeyword_0() { return cQuestionnaireKeyword_0; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-		
-		//('nom' nom=EString)?
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'nom'
-		public Keyword getNomKeyword_2_0() { return cNomKeyword_2_0; }
-		
-		//nom=EString
-		public Assignment getNomAssignment_2_1() { return cNomAssignment_2_1; }
+		//(nom=EString)?
+		public Assignment getNomAssignment_1() { return cNomAssignment_1; }
 		
 		//EString
-		public RuleCall getNomEStringParserRuleCall_2_1_0() { return cNomEStringParserRuleCall_2_1_0; }
+		public RuleCall getNomEStringParserRuleCall_1_0() { return cNomEStringParserRuleCall_1_0; }
 		
-		//('resultat' resultat=EDouble)?
-		public Group getGroup_3() { return cGroup_3; }
+		//('RetourAutorisé' retourAutorise=EBoolean)?
+		public Group getGroup_2() { return cGroup_2; }
 		
-		//'resultat'
-		public Keyword getResultatKeyword_3_0() { return cResultatKeyword_3_0; }
-		
-		//resultat=EDouble
-		public Assignment getResultatAssignment_3_1() { return cResultatAssignment_3_1; }
-		
-		//EDouble
-		public RuleCall getResultatEDoubleParserRuleCall_3_1_0() { return cResultatEDoubleParserRuleCall_3_1_0; }
-		
-		//('retourAutorise' retourAutorise=EBoolean)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'retourAutorise'
-		public Keyword getRetourAutoriseKeyword_4_0() { return cRetourAutoriseKeyword_4_0; }
+		//'RetourAutorisé'
+		public Keyword getRetourAutorisKeyword_2_0() { return cRetourAutorisKeyword_2_0; }
 		
 		//retourAutorise=EBoolean
-		public Assignment getRetourAutoriseAssignment_4_1() { return cRetourAutoriseAssignment_4_1; }
+		public Assignment getRetourAutoriseAssignment_2_1() { return cRetourAutoriseAssignment_2_1; }
 		
 		//EBoolean
-		public RuleCall getRetourAutoriseEBooleanParserRuleCall_4_1_0() { return cRetourAutoriseEBooleanParserRuleCall_4_1_0; }
+		public RuleCall getRetourAutoriseEBooleanParserRuleCall_2_1_0() { return cRetourAutoriseEBooleanParserRuleCall_2_1_0; }
 		
-		//('melange' melange=EBoolean)?
-		public Group getGroup_5() { return cGroup_5; }
+		//('Mélanger' melange=EBoolean)?
+		public Group getGroup_3() { return cGroup_3; }
 		
-		//'melange'
-		public Keyword getMelangeKeyword_5_0() { return cMelangeKeyword_5_0; }
+		//'Mélanger'
+		public Keyword getMLangerKeyword_3_0() { return cMLangerKeyword_3_0; }
 		
 		//melange=EBoolean
-		public Assignment getMelangeAssignment_5_1() { return cMelangeAssignment_5_1; }
+		public Assignment getMelangeAssignment_3_1() { return cMelangeAssignment_3_1; }
 		
 		//EBoolean
-		public RuleCall getMelangeEBooleanParserRuleCall_5_1_0() { return cMelangeEBooleanParserRuleCall_5_1_0; }
+		public RuleCall getMelangeEBooleanParserRuleCall_3_1_0() { return cMelangeEBooleanParserRuleCall_3_1_0; }
 		
-		//'question'
-		public Keyword getQuestionKeyword_6() { return cQuestionKeyword_6; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_7() { return cLeftCurlyBracketKeyword_7; }
-		
-		//question+=Question
-		public Assignment getQuestionAssignment_8() { return cQuestionAssignment_8; }
+		//(question+=Question)+
+		public Assignment getQuestionAssignment_4() { return cQuestionAssignment_4; }
 		
 		//Question
-		public RuleCall getQuestionQuestionParserRuleCall_8_0() { return cQuestionQuestionParserRuleCall_8_0; }
-		
-		//( "," question+=Question)*
-		public Group getGroup_9() { return cGroup_9; }
-		
-		//","
-		public Keyword getCommaKeyword_9_0() { return cCommaKeyword_9_0; }
-		
-		//question+=Question
-		public Assignment getQuestionAssignment_9_1() { return cQuestionAssignment_9_1; }
-		
-		//Question
-		public RuleCall getQuestionQuestionParserRuleCall_9_1_0() { return cQuestionQuestionParserRuleCall_9_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public RuleCall getQuestionQuestionParserRuleCall_4_0() { return cQuestionQuestionParserRuleCall_4_0; }
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.Eduquizz.EString");
@@ -252,155 +184,97 @@ public class EduquizzGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	public class QuestionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.Eduquizz.Question");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cReponsesMultiplesAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cReponsesMultiplesReponsesMultiplesKeyword_0_0 = (Keyword)cReponsesMultiplesAssignment_0.eContents().get(0);
-		private final Keyword cQuestionKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cQuestionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cEnnonceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cEnnonceEStringParserRuleCall_1_0 = (RuleCall)cEnnonceAssignment_1.eContents().get(0);
+		private final Assignment cReponsesMultiplesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cReponsesMultiplesRPonsesMultiplesKeyword_2_0 = (Keyword)cReponsesMultiplesAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cEnnonceKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cEnnonceAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cEnnonceEStringParserRuleCall_3_1_0 = (RuleCall)cEnnonceAssignment_3_1.eContents().get(0);
+		private final Keyword cDifficultKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cDifficulteAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cDifficulteEIntParserRuleCall_3_1_0 = (RuleCall)cDifficulteAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cDifficulteKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cDifficulteAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cDifficulteEIntParserRuleCall_4_1_0 = (RuleCall)cDifficulteAssignment_4_1.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cEtiquetteKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cEtiquetteAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cEtiquetteEtiquetteParserRuleCall_5_2_0 = (RuleCall)cEtiquetteAssignment_5_2.eContents().get(0);
-		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
-		private final Keyword cCommaKeyword_5_3_0 = (Keyword)cGroup_5_3.eContents().get(0);
-		private final Assignment cEtiquetteAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
-		private final RuleCall cEtiquetteEtiquetteParserRuleCall_5_3_1_0 = (RuleCall)cEtiquetteAssignment_5_3_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
-		private final Keyword cReponseKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cReponseAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cReponseReponseParserRuleCall_8_0 = (RuleCall)cReponseAssignment_8.eContents().get(0);
-		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cCommaKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Assignment cReponseAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
-		private final RuleCall cReponseReponseParserRuleCall_9_1_0 = (RuleCall)cReponseAssignment_9_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cEtiquettesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cEtiquetteAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cEtiquetteEtiquetteParserRuleCall_4_1_0 = (RuleCall)cEtiquetteAssignment_4_1.eContents().get(0);
+		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
+		private final Keyword cCommaKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
+		private final Assignment cEtiquetteAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
+		private final RuleCall cEtiquetteEtiquetteParserRuleCall_4_2_1_0 = (RuleCall)cEtiquetteAssignment_4_2_1.eContents().get(0);
+		private final Assignment cReponseAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cReponseReponseParserRuleCall_5_0 = (RuleCall)cReponseAssignment_5.eContents().get(0);
 		
 		//Question returns Question:
-		//    (reponsesMultiples?='reponsesMultiples')?
-		//    'Question'
-		//    '{'
-		//        ('ennonce' ennonce=EString)?
-		//        ('difficulte' difficulte=EInt)?
-		//        ('etiquette' '(' etiquette+=Etiquette ( "," etiquette+=Etiquette)* ')' )?
-		//        'reponse' '{' reponse+=Reponse ( "," reponse+=Reponse)* '}'
-		//    '}';
+		//    'Question' (ennonce=EString)?
+		//    (reponsesMultiples?='RéponsesMultiples')?
+		//    ('Difficulté' difficulte=EInt)?
+		//    ('Etiquettes' etiquette+=Etiquette ( "," etiquette+=Etiquette)* )?
+		//    (reponse+=Reponse)+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(reponsesMultiples?='reponsesMultiples')?
-		//'Question'
-		//'{'
-		//    ('ennonce' ennonce=EString)?
-		//    ('difficulte' difficulte=EInt)?
-		//    ('etiquette' '(' etiquette+=Etiquette ( "," etiquette+=Etiquette)* ')' )?
-		//    'reponse' '{' reponse+=Reponse ( "," reponse+=Reponse)* '}'
-		//'}'
+		//'Question' (ennonce=EString)?
+		//(reponsesMultiples?='RéponsesMultiples')?
+		//('Difficulté' difficulte=EInt)?
+		//('Etiquettes' etiquette+=Etiquette ( "," etiquette+=Etiquette)* )?
+		//(reponse+=Reponse)+
 		public Group getGroup() { return cGroup; }
 		
-		//(reponsesMultiples?='reponsesMultiples')?
-		public Assignment getReponsesMultiplesAssignment_0() { return cReponsesMultiplesAssignment_0; }
-		
-		//'reponsesMultiples'
-		public Keyword getReponsesMultiplesReponsesMultiplesKeyword_0_0() { return cReponsesMultiplesReponsesMultiplesKeyword_0_0; }
-		
 		//'Question'
-		public Keyword getQuestionKeyword_1() { return cQuestionKeyword_1; }
+		public Keyword getQuestionKeyword_0() { return cQuestionKeyword_0; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('ennonce' ennonce=EString)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'ennonce'
-		public Keyword getEnnonceKeyword_3_0() { return cEnnonceKeyword_3_0; }
-		
-		//ennonce=EString
-		public Assignment getEnnonceAssignment_3_1() { return cEnnonceAssignment_3_1; }
+		//(ennonce=EString)?
+		public Assignment getEnnonceAssignment_1() { return cEnnonceAssignment_1; }
 		
 		//EString
-		public RuleCall getEnnonceEStringParserRuleCall_3_1_0() { return cEnnonceEStringParserRuleCall_3_1_0; }
+		public RuleCall getEnnonceEStringParserRuleCall_1_0() { return cEnnonceEStringParserRuleCall_1_0; }
 		
-		//('difficulte' difficulte=EInt)?
-		public Group getGroup_4() { return cGroup_4; }
+		//(reponsesMultiples?='RéponsesMultiples')?
+		public Assignment getReponsesMultiplesAssignment_2() { return cReponsesMultiplesAssignment_2; }
 		
-		//'difficulte'
-		public Keyword getDifficulteKeyword_4_0() { return cDifficulteKeyword_4_0; }
+		//'RéponsesMultiples'
+		public Keyword getReponsesMultiplesRPonsesMultiplesKeyword_2_0() { return cReponsesMultiplesRPonsesMultiplesKeyword_2_0; }
+		
+		//('Difficulté' difficulte=EInt)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'Difficulté'
+		public Keyword getDifficultKeyword_3_0() { return cDifficultKeyword_3_0; }
 		
 		//difficulte=EInt
-		public Assignment getDifficulteAssignment_4_1() { return cDifficulteAssignment_4_1; }
+		public Assignment getDifficulteAssignment_3_1() { return cDifficulteAssignment_3_1; }
 		
 		//EInt
-		public RuleCall getDifficulteEIntParserRuleCall_4_1_0() { return cDifficulteEIntParserRuleCall_4_1_0; }
+		public RuleCall getDifficulteEIntParserRuleCall_3_1_0() { return cDifficulteEIntParserRuleCall_3_1_0; }
 		
-		//('etiquette' '(' etiquette+=Etiquette ( "," etiquette+=Etiquette)* ')' )?
-		public Group getGroup_5() { return cGroup_5; }
+		//('Etiquettes' etiquette+=Etiquette ( "," etiquette+=Etiquette)* )?
+		public Group getGroup_4() { return cGroup_4; }
 		
-		//'etiquette'
-		public Keyword getEtiquetteKeyword_5_0() { return cEtiquetteKeyword_5_0; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_5_1() { return cLeftParenthesisKeyword_5_1; }
+		//'Etiquettes'
+		public Keyword getEtiquettesKeyword_4_0() { return cEtiquettesKeyword_4_0; }
 		
 		//etiquette+=Etiquette
-		public Assignment getEtiquetteAssignment_5_2() { return cEtiquetteAssignment_5_2; }
+		public Assignment getEtiquetteAssignment_4_1() { return cEtiquetteAssignment_4_1; }
 		
 		//Etiquette
-		public RuleCall getEtiquetteEtiquetteParserRuleCall_5_2_0() { return cEtiquetteEtiquetteParserRuleCall_5_2_0; }
+		public RuleCall getEtiquetteEtiquetteParserRuleCall_4_1_0() { return cEtiquetteEtiquetteParserRuleCall_4_1_0; }
 		
 		//( "," etiquette+=Etiquette)*
-		public Group getGroup_5_3() { return cGroup_5_3; }
+		public Group getGroup_4_2() { return cGroup_4_2; }
 		
 		//","
-		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
+		public Keyword getCommaKeyword_4_2_0() { return cCommaKeyword_4_2_0; }
 		
 		//etiquette+=Etiquette
-		public Assignment getEtiquetteAssignment_5_3_1() { return cEtiquetteAssignment_5_3_1; }
+		public Assignment getEtiquetteAssignment_4_2_1() { return cEtiquetteAssignment_4_2_1; }
 		
 		//Etiquette
-		public RuleCall getEtiquetteEtiquetteParserRuleCall_5_3_1_0() { return cEtiquetteEtiquetteParserRuleCall_5_3_1_0; }
+		public RuleCall getEtiquetteEtiquetteParserRuleCall_4_2_1_0() { return cEtiquetteEtiquetteParserRuleCall_4_2_1_0; }
 		
-		//')'
-		public Keyword getRightParenthesisKeyword_5_4() { return cRightParenthesisKeyword_5_4; }
-		
-		//'reponse'
-		public Keyword getReponseKeyword_6() { return cReponseKeyword_6; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_7() { return cLeftCurlyBracketKeyword_7; }
-		
-		//reponse+=Reponse
-		public Assignment getReponseAssignment_8() { return cReponseAssignment_8; }
+		//(reponse+=Reponse)+
+		public Assignment getReponseAssignment_5() { return cReponseAssignment_5; }
 		
 		//Reponse
-		public RuleCall getReponseReponseParserRuleCall_8_0() { return cReponseReponseParserRuleCall_8_0; }
-		
-		//( "," reponse+=Reponse)*
-		public Group getGroup_9() { return cGroup_9; }
-		
-		//","
-		public Keyword getCommaKeyword_9_0() { return cCommaKeyword_9_0; }
-		
-		//reponse+=Reponse
-		public Assignment getReponseAssignment_9_1() { return cReponseAssignment_9_1; }
-		
-		//Reponse
-		public RuleCall getReponseReponseParserRuleCall_9_1_0() { return cReponseReponseParserRuleCall_9_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public RuleCall getReponseReponseParserRuleCall_5_0() { return cReponseReponseParserRuleCall_5_0; }
 	}
 	public class EIntElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.Eduquizz.EInt");
@@ -425,113 +299,73 @@ public class EduquizzGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.Eduquizz.Etiquette");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEtiquetteAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cEtiquetteKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cNomKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cNomAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cNomEStringParserRuleCall_3_1_0 = (RuleCall)cNomAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cNomAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNomEStringParserRuleCall_1_0 = (RuleCall)cNomAssignment_1.eContents().get(0);
 		
 		//Etiquette returns Etiquette:
 		//    {Etiquette}
-		//    'Etiquette'
-		//    '{'
-		//        ('nom' nom=EString)?
-		//    '}';
+		//    (nom=EString)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Etiquette}
-		//'Etiquette'
-		//'{'
-		//    ('nom' nom=EString)?
-		//'}'
+		//(nom=EString)?
 		public Group getGroup() { return cGroup; }
 		
 		//{Etiquette}
 		public Action getEtiquetteAction_0() { return cEtiquetteAction_0; }
 		
-		//'Etiquette'
-		public Keyword getEtiquetteKeyword_1() { return cEtiquetteKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('nom' nom=EString)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'nom'
-		public Keyword getNomKeyword_3_0() { return cNomKeyword_3_0; }
-		
-		//nom=EString
-		public Assignment getNomAssignment_3_1() { return cNomAssignment_3_1; }
+		//(nom=EString)?
+		public Assignment getNomAssignment_1() { return cNomAssignment_1; }
 		
 		//EString
-		public RuleCall getNomEStringParserRuleCall_3_1_0() { return cNomEStringParserRuleCall_3_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public RuleCall getNomEStringParserRuleCall_1_0() { return cNomEStringParserRuleCall_1_0; }
 	}
 	public class ReponseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.Eduquizz.Reponse");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cReponseAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cEstVraieAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cEstVraieEstVraieKeyword_1_0 = (Keyword)cEstVraieAssignment_1.eContents().get(0);
-		private final Keyword cReponseKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cTexteKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cTexteAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cTexteEStringParserRuleCall_4_1_0 = (RuleCall)cTexteAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cEstVraieAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cEstVraieXKeyword_2_0 = (Keyword)cEstVraieAssignment_2.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cTexteAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cTexteEStringParserRuleCall_4_0 = (RuleCall)cTexteAssignment_4.eContents().get(0);
 		
 		//Reponse returns Reponse:
 		//    {Reponse}
-		//    (estVraie?='estVraie')?
-		//    'Reponse'
-		//    '{'
-		//        ('texte' texte=EString)?
-		//    '}';
+		//    '['
+		//    (estVraie?='x')?
+		//    ']'
+		//    (texte=EString)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Reponse}
-		//(estVraie?='estVraie')?
-		//'Reponse'
-		//'{'
-		//    ('texte' texte=EString)?
-		//'}'
+		//'['
+		//(estVraie?='x')?
+		//']'
+		//(texte=EString)?
 		public Group getGroup() { return cGroup; }
 		
 		//{Reponse}
 		public Action getReponseAction_0() { return cReponseAction_0; }
 		
-		//(estVraie?='estVraie')?
-		public Assignment getEstVraieAssignment_1() { return cEstVraieAssignment_1; }
+		//'['
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 		
-		//'estVraie'
-		public Keyword getEstVraieEstVraieKeyword_1_0() { return cEstVraieEstVraieKeyword_1_0; }
+		//(estVraie?='x')?
+		public Assignment getEstVraieAssignment_2() { return cEstVraieAssignment_2; }
 		
-		//'Reponse'
-		public Keyword getReponseKeyword_2() { return cReponseKeyword_2; }
+		//'x'
+		public Keyword getEstVraieXKeyword_2_0() { return cEstVraieXKeyword_2_0; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		//']'
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
 		
-		//('texte' texte=EString)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'texte'
-		public Keyword getTexteKeyword_4_0() { return cTexteKeyword_4_0; }
-		
-		//texte=EString
-		public Assignment getTexteAssignment_4_1() { return cTexteAssignment_4_1; }
+		//(texte=EString)?
+		public Assignment getTexteAssignment_4() { return cTexteAssignment_4; }
 		
 		//EString
-		public RuleCall getTexteEStringParserRuleCall_4_1_0() { return cTexteEStringParserRuleCall_4_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public RuleCall getTexteEStringParserRuleCall_4_0() { return cTexteEStringParserRuleCall_4_0; }
 	}
 	
 	
@@ -591,14 +425,10 @@ public class EduquizzGrammarAccess extends AbstractElementFinder.AbstractGrammar
 
 	
 	//Questionnaire returns Questionnaire:
-	//    'Questionnaire'
-	//    '{'
-	//        ('nom' nom=EString)?
-	//        ('resultat' resultat=EDouble)?
-	//        ('retourAutorise' retourAutorise=EBoolean)?
-	//        ('melange' melange=EBoolean)?
-	//        'question' '{' question+=Question ( "," question+=Question)* '}'
-	//    '}';
+	//    'Questionnaire' (nom=EString)?
+	//    ('RetourAutorisé' retourAutorise=EBoolean)?
+	//    ('Mélanger' melange=EBoolean)?
+	//    (question+=Question)+;
 	public QuestionnaireElements getQuestionnaireAccess() {
 		return pQuestionnaire;
 	}
@@ -638,14 +468,11 @@ public class EduquizzGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//Question returns Question:
-	//    (reponsesMultiples?='reponsesMultiples')?
-	//    'Question'
-	//    '{'
-	//        ('ennonce' ennonce=EString)?
-	//        ('difficulte' difficulte=EInt)?
-	//        ('etiquette' '(' etiquette+=Etiquette ( "," etiquette+=Etiquette)* ')' )?
-	//        'reponse' '{' reponse+=Reponse ( "," reponse+=Reponse)* '}'
-	//    '}';
+	//    'Question' (ennonce=EString)?
+	//    (reponsesMultiples?='RéponsesMultiples')?
+	//    ('Difficulté' difficulte=EInt)?
+	//    ('Etiquettes' etiquette+=Etiquette ( "," etiquette+=Etiquette)* )?
+	//    (reponse+=Reponse)+;
 	public QuestionElements getQuestionAccess() {
 		return pQuestion;
 	}
@@ -666,10 +493,7 @@ public class EduquizzGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	//Etiquette returns Etiquette:
 	//    {Etiquette}
-	//    'Etiquette'
-	//    '{'
-	//        ('nom' nom=EString)?
-	//    '}';
+	//    (nom=EString)?;
 	public EtiquetteElements getEtiquetteAccess() {
 		return pEtiquette;
 	}
@@ -680,11 +504,10 @@ public class EduquizzGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	//Reponse returns Reponse:
 	//    {Reponse}
-	//    (estVraie?='estVraie')?
-	//    'Reponse'
-	//    '{'
-	//        ('texte' texte=EString)?
-	//    '}';
+	//    '['
+	//    (estVraie?='x')?
+	//    ']'
+	//    (texte=EString)?;
 	public ReponseElements getReponseAccess() {
 		return pReponse;
 	}
