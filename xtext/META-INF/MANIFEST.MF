@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: xtext
+Bundle-ManifestVersion: 2
+Bundle-Name: xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: mm1,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.36.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: xtext.services,
+ xtext.serializer,
+ xtext.parser.antlr,
+ xtext,
+ xtext.parser.antlr.internal,
+ xtext.validation,
+ xtext.generator,
+ xtext.formatting2,
+ xtext.scoping
+Import-Package: org.apache.log4j
