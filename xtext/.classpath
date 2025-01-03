@@ -9,6 +9,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="lib" path="/home/e20200001796/eclipse/plugins/org.apache.commons.logging_1.2.0.v20180409-1502.jar"/>
+	<classpathentry kind="lib" path="/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.commons.logging_1.2.0.v20180409-1502.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
